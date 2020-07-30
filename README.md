@@ -1,0 +1,2 @@
+Spring Api Rest
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=br.com.unipam.infoweek.spring-api-rest%3Aspring-api-rest&metric=alert_status)](https://sonarcloud.io/dashboard?id=br.com.unipam.infoweek.spring-api-rest%3Aspring-api-rest)
