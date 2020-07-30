@@ -5,10 +5,11 @@ on:
         branches:
             - master
     pull_request:
+
 jobs:
     code-verification:
         name: Code Check
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
         steps:
             -   uses: actions/checkout@v2
                 with:
