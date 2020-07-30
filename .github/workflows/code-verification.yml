@@ -22,7 +22,16 @@ jobs:
                 with:
                     path: ${{ env.maven-path }}
                     key: ${{ runner.os }}-build-${{ env.maven-cache-key }}-${{ hashFiles('pom.xml') }}
+            -   name: Cache sonar dependences
+                uses: actions/cache@v2
+                env:
+                    sonar-cache-key: sonar-cache
+                    sonar-path: ~/.sonar
+                with:
+                    path: ${{ env.sonar-path }}
+                    key: ${{ runner.os }}-build-${{ env.sonar-cache-key }}-${{ hashFiles('pom.xml') }}
             -   name: Run tests check
                 env:
+                    GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
                     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
                 run: mvn clean verify sonar:sonar
